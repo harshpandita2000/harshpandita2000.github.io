@@ -198,6 +198,17 @@ section {
   font-size: 3rem;
   text-align: center;
 }
+.section__text__p1 {
+  animation: slideIn 1s forwards;
+}
+
+.title {
+  animation: fadeIn 1s forwards;
+}
+
+.section__text__p2 {
+  animation: slideIn 1s forwards;
+}
 
 #socials-container {
   display: flex;
@@ -205,6 +216,7 @@ section {
   margin-top: 1rem;
   gap: 1rem;
 }
+
 
 /* ICONS */
 
@@ -429,15 +441,4 @@ footer {
 
 footer p {
   text-align: center;
-}
-.section__text__p1 {
-  animation: slideIn 1s forwards;
-}
-
-.title {
-  animation: fadeIn 1s forwards;
-}
-
-.section__text__p2 {
-  animation: slideIn 1s forwards;
 }
