@@ -1,327 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="screen.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">
-        <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXR6djlsY3U1Mjc0eWliMWk2djFsemFzdmF5djFnbmFjcGVlaTU5ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vR16pONsV8cKkWk/giphy.gif" alt="Logo" style="width: 50px; height: 50px;" />
-      </div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">Harsh Pandita</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
-    <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Harsh Pandita profile picture" style="width: 300px;" />
-
-      </div>
-      <div class="section__text">
-        <p class="section__text__p1" style="animation: slideIn 1s forwards;">Hello, I'm</p>
-        <h1 class="title" style="animation: fadeIn 1s forwards;">Harsh Pandita</h1>
-        <p class="section__text__p2" style="animation: slideIn 1s forwards;">Python Developer</p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Pandita - Software Engineer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
     
-        <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/myresume.pdf')"
-          >
-            Download Resume
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
+    <!-- Header -->
+<header class="header" id="header">
+    <nav class="nav">
+        <div class="nav-brand">
+            <img src="images/hp.jpeg" alt="Harsh Pandita" class="nav-profile-img">
+            <h2>Harsh </h2>
         </div>
-        <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https://linkedin.com/'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https://github.com/'"
-          />
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#awards" class="nav-link">Awards</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      
+        <div class="nav-actions">
+    <!-- Resume Download Button with Custom Logo -->
+    <a href="https://drive.google.com/file/d/1nwdG8i8u-WN3Lk06Wy6Ju9JMKDDNxkbu/view" target="_blank" rel="noopener noreferrer" class="resume-btn">
+        <img src="https://t3.ftcdn.net/jpg/04/75/01/06/360_F_475010683_QcMoX9EuZkjVToNNtXCDbejMo4tIj06i.jpg" alt="Resume" class="resume-icon">
+        <span>Resume</span>
+    </a>
+
+            <div class="theme-toggle" id="themeToggle">
+                <span class="theme-icon">🌙</span>
+            </div>
+            
+            <div class="social-links">
+    <a href="https://www.linkedin.com/in/harsh-pandita-dev/" aria-label="LinkedIn" title="LinkedIn Profile">
+        <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/harshpandita2000" aria-label="GitHub" title="GitHub Profile">
+        <i class="fab fa-github"></i>
+    </a>
+    <a href="https://leetcode.com/harshpandita/" aria-label="LeetCode" title="LeetCode Profile" class="leetcode-link">
+        <img src="https://github.com/rahuldkjain/github-profile-readme-generator/raw/master/src/images/icons/Social/leet-code.svg" alt="LeetCode" class="leetcode-icon">
+    </a>
+    <a href="https://auth.geeksforgeeks.org/user/harshpandita/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user" aria-label="GeeksforGeeks" title="GeeksforGeeks Profile" class="gfg-link">
+        <img src="https://github.com/rahuldkjain/github-profile-readme-generator/raw/master/src/images/icons/Social/geeks-for-geeks.svg" alt="GeeksforGeeks" class="gfg-icon">
+    </a>
+    <a href="mailto:Panditaharsh32@gmail.com" aria-label="Email" title="Send Email">
+        <i class="fas fa-envelope"></i>
+    </a>
+</div>
+
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-      </div>
+    </nav>
+</header>
+
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="floating-particles"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="animate-text">Hello, I'm</span>
+                        <span class="name-highlight">Harsh Pandita</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Software Engineer</h2>
+                    <p class="hero-tagline">Passionate about pushing the boundaries of AI and automation, using GenAI and data engineering to develop impactful solutions.</p>
+                    <div class="hero-contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9796469900</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>Panditaharsh32@gmail.com</span>
+                        </div>
+                    </div>
+                    <!-- <div class="hero-buttons">
+                        <button class="btn btn-primary">View My Work</button>
+                        <button class="btn btn-secondary">Download CV</button>
+                    </div> -->
+                </div>
+                <div class="hero-image">
+                    <div class="image-container">
+                        <img src="images/hp.jpeg" alt="Harsh Pandita Portrait" loading="lazy">
+                        <div class="image-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
-    <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./assets/about-pic.png"
-            alt="Profile picture"
-            class="about-pic"
-          />
+
+    <!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">Software Engineer specializing in AI, automation, and modern development technologies</p>
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./assets/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>2+ years <br />Python Developer</p>
+        <div class="about-content">
+            <div class="about-text-column">
+                <p>I am a Software Engineer at EY, specializing in GenAI, Copilot Studio, Azure AI Foundry, and AI Search solutions. I focus on leveraging cutting-edge technologies to deliver innovative, high-impact solutions that drive transformation in AI and automation</p>
+                
+                <div class="education-info">
+                    <h3><i class="fas fa-graduation-cap"></i> Education</h3>
+                    <div class="education-content">
+                        <img src="https://media.licdn.com/dms/image/v2/C4D0BAQE_YeJeUq8qlA/company-logo_200_200/company-logo_200_200/0/1630491170647?e=2147483647&v=beta&t=b6iNW7SQIRzTDStSSxgTLMTinQ5cAIkz4dOovnJCkwE" alt="JNTUHCEH Logo" class="college-logo">
+                        <div class="education-details">
+                            <p><strong>JNTU College of Engineering Hyderabad (JNTUHCEH)</strong></p>
+                            <p>Bachelor of Technology in Computer Science Engineering</p>
+                            <p class="duration">2019 - 2023</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certifications">
+                    <h3><i class="fas fa-certificate"></i> Certifications & Badges</h3>
+                    <div class="cert-grid">
+                        <div class="cert-item">
+                            <img src="images/dataplatform.jpg" alt="EY Data Platform Badge" class="cert-badge-img">
+                            <span>EY Data Platform Badge</span>
+                        </div>
+                        <div class="cert-item">
+                            <img src="images/ai900.jpg" alt="Microsoft AI-900 Badge" class="cert-badge-img">
+                            <span>Microsoft AI-900</span>
+                        </div>
+                        <div class="cert-item">
+                            <img src="images/pl900.jpg" alt="Microsoft PL-900 Badge" class="cert-badge-img">
+                            <span>Microsoft PL-900</span>
+                        </div>
+                        <div class="cert-item">
+                            <i class="fas fa-medal"></i>
+                            <span>Mendix Rapid Developer</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="details-container">
-              <img
-                src="./assets/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-            <h3>Education</h3>
-            <p>BTech from JNTUH University College of Engineering, Science &amp; Technology Hyderabad</p>
+
+            <!-- New Right Column Content -->
+            <div class="about-visual-column">
+                <!-- Professional Summary Card -->
+                <div class="summary-card">
+                    <h3><i class="fas fa-user-tie"></i> Professional Summary</h3>
+                    <div class="summary-stats">
+                        <div class="summary-item">
+                            <div class="summary-number">1+</div>
+                            <div class="summary-label">Years at EY</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-number">4</div>
+                            <div class="summary-label">Certifications</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-number">3+</div>
+                            <div class="summary-label">Projects</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current Focus Card -->
+                <div class="focus-card">
+                    <h3><i class="fas fa-bullseye"></i> Current Focus</h3>
+                    <div class="focus-items">
+                        <div class="focus-item">
+                            <i class="fas fa-robot"></i>
+                            <span>GenAI Solutions</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="fab fa-microsoft"></i>
+                            <span>Azure AI Foundry</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="fas fa-search"></i>
+                            <span>AI Search Implementation</span>
+                        </div>
+                        <div class="focus-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>Data Engineering</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Expertise Card -->
+                <div class="expertise-card">
+                    <h3><i class="fas fa-chart-line"></i> Expertise Areas</h3>
+                    <div class="expertise-list">
+                        <span class="expertise-tag">Artificial Intelligence</span>
+                        <span class="expertise-tag">Process Automation</span>
+                        <span class="expertise-tag">Cloud Computing</span>
+                        <span class="expertise-tag">Data Engineering</span>
+                        <span class="expertise-tag">Enterprise Solutions</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#experience'"
-      />
-      <section id="experience">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Experience</h1>
-        <div class="experience-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <h2 class="experience-sub-title"> Languages </h2>
-              <div class="article-container">
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>HTML</h3>
-                    <p>Basic</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>CSS</h3>
-                    <p>Basic</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3>JavaScript</h3>
-                    <p>Basic</p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3> C </h3>
-                    <p> Intermediate </p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3> C++ </h3>
-                    <p> Intermediate </p>
-                  </div>
-                </article>
-                <article>
-                  <img
-                    src="./assets/checkmark.png"
-                    alt="Experience icon"
-                    class="icon"
-                  />
-                  <div>
-                    <h3> Python </h3>
-                    <p> Intermediate </p>
-                  </div>
-                </article>
-              </div>
+
+        <!-- Skills Section (Full Width Below) -->
+        <div class="skills-section">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+                <!-- Your existing skills content remains exactly the same -->
+                <div class="skill-category">
+                    <h4><i class="fas fa-code"></i> Programming Languages</h4>
+                    <div class="skills">
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo">
+                            Python
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C" class="skill-logo">
+                            C
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-logo">
+                            C++
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="skill-logo">
+                            HTML
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="skill-logo">
+                            CSS
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" class="skill-logo">
+                            C#
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h4><i class="fas fa-laptop-code"></i> Development Tools</h4>
+                    <div class="skills">
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-logo">
+                            VS Code
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio" class="skill-logo">
+                            Visual Studio
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="skill-logo">
+                            GitHub
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" class="skill-logo">
+                            SQL
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-chart-bar"></i> Analytics & BI</h4>
+                    <div class="skills">
+                        <span class="skill-tag">
+                            <img src="https://logos-world.net/wp-content/uploads/2022/02/Microsoft-Power-BI-Symbol.png" alt="Power BI" class="skill-logo">
+                            Power BI
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://play-lh.googleusercontent.com/aeXs0qriXwmHVWtq9u4zVUO6SifULKtJOQdtBg6wDQqaNEaaJKl6b2oiABMmHn6yLH8" alt="Power Automate" class="skill-logo">
+                            Power Automate
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-cloud"></i> Cloud & Platforms</h4>
+                    <div class="skills">
+                        <span class="skill-tag">
+                            <img src="https://miro.medium.com/v2/resize:fit:1400/1*neG4D9C8UcJvNn6bverfIA.png" alt="AWS" class="skill-logo">
+                            AWS
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure AI" class="skill-logo">
+                            Azure AI
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://yt3.googleusercontent.com/1690uWhKYBQsgB72muCVeVx-VF7hOSAECd3boKfNNY33uhThIMmGwUlITrnCIWu6HsPV58nk=s900-c-k-c0x00ffffff-no-rj" alt="Copilot Studio" class="skill-logo">
+                            Copilot Studio
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://teamsdevapp.gallerycdn.vsassets.io/extensions/teamsdevapp/vscode-ai-foundry/0.7.2/1752824410445/Microsoft.VisualStudio.Services.Icons.Default" alt="AI Foundry" class="skill-logo">
+                           Azure AI Foundry
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h4><i class="fas fa-tools"></i> Other Tools</h4>
+                    <div class="skills">
+                        <span class="skill-tag">
+                            <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFlvXknhjCqvg/company-logo_200_200/B4EZfHlvCzHwAI-/0/1751400247839/mendix_logo?e=2147483647&v=beta&t=nTOUkiBzxZWkoY7P4AenL5ofWoOWVHt4f2CQ5Ey6eqc" alt="Mendix" class="skill-logo">
+                            Mendix
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbJvcX6r-NTDEQqp3F3M0UwFqwNqRUVErOhw&s" alt="OutSystems" class="skill-logo">
+                            OutSystems
+                        </span>
+                        <span class="skill-tag">
+                            <img src="https://cdn.dribbble.com/userupload/42999165/file/original-59e1174770bd0010f95ddaf2f81eeec0.png?resize=2048x1249&vertical=center" alt="GenAI" class="skill-logo">
+                            GenAI
+                        </span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <img
-          src="./assets/arrow.png"
-          alt="Arrow icon"
-          class="icon arrow"
-          onclick="location.href='./#projects'"
-        />
-  
+    </div>
+</section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="professional">Professional</button>
+                    <button class="filter-btn" data-filter="academic">Academic</button>
+                </div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card featured" data-category="professional">
+                    <div class="project-image">
+                        <img src="images/sptoPa.png" alt="SharePoint Migration Project" loading="lazy">
+                        <!-- <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link">View Details</a>
+                                <a href="#" class="project-link">Documentation</a>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="project-info">
+                        <h3>SharePoint Migration to Power Automate</h3>
+                        <p>Contributed as Junior Developer in migrating SharePoint 2013 XAML workflows to Power Automate using a custom C# parser tool. Enhanced the tool to support seven additional workflow actions including ReplaceString and Trim operations.</p>
+                        <div class="tech-stack">
+                            <span class="tech-tag"><i class="fas fa-hashtag"></i> C#</span>
+                            <span class="tech-tag"><i class="fab fa-microsoft"></i> SharePoint</span>
+                            <span class="tech-tag"><i class="fas fa-robot"></i> Power Automate</span>
+                            <span class="tech-tag"><i class="fas fa-code"></i> XAML</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card" data-category="professional">
+    <div class="project-image">
+        <img src="https://www.atptech.com/wp-content/uploads/photo_powerbi.jpg" alt="Power BI Report Image">
+    </div>
+    <div class="project-info">
+        <h3>Power BI Report Generation</h3>
+        <p>Created comprehensive Power BI reports for the talent team, providing insights and analytics to support data-driven decision making processes.</p>
+        <div class="tech-stack">
+            <span class="tech-tag"><i class="fas fa-chart-pie"></i> Power BI</span>
+            <span class="tech-tag"><i class="fas fa-database"></i> SQL</span>
+            <span class="tech-tag"><i class="fas fa-chart-line"></i> Analytics</span>
+        </div>
+    </div>
+</div>
+
+                <div class="project-card" data-category="academic">
+    <div class="project-image">
+        <img src="https://i.ytimg.com/vi/h52i5hYumO8/sddefault.jpg" alt="Student Feedback Management System" loading="lazy">
+        <!-- <div class="project-overlay">
+            <div class="project-links">
+                <a href="#" class="project-link">View Details</a>
+                <a href="#" class="project-link">Demo</a>
+            </div>
+        </div> -->
+    </div>
+    <div class="project-info">
+        <h3>Student Feedback Management System</h3>
+        <p>Developed a comprehensive feedback management system for educational institutions with intuitive user interface for students and robust backend for administrators to manage and analyze feedback.</p>
+        <div class="tech-stack">
+            <span class="tech-tag"><i class="fab fa-html5"></i> HTML</span>
+            <span class="tech-tag"><i class="fab fa-css3-alt"></i> CSS</span>
+            <span class="tech-tag"><i class="fas fa-database"></i> SQL</span>
+            <span class="tech-tag"><i class="fas fa-server"></i> Backend</span>
+        </div>
+    </div>
+</div>
+
+
+            </div>
+        </div>
     </section>
-    <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-1.png"
-                alt="Project 1"
-                class="project-img"
-              />
+
+    <!-- Experience Section -->
+    <section class="experience" id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work Experience</h2>
             </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
+            <div class="experience-timeline">
+                <div class="experience-card">
+                    <div class="company-logo">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTezmWC96MgZ-vf_mbU3xyQDQhEsl_O2G9qUA&s" alt="EY Logo" class="logo-img">
+                    </div>
+                    <div class="experience-info">
+                        <h3>Software Engineer</h3>
+                        <h4>Ernst & Young (EY)</h4>
+                        <p class="duration">May 2024 - Present</p>
+                        <ul class="responsibilities">
+                            <li>Currently working on cutting-edge GenAI technologies and Azure AI solutions</li>
+                            <li>Developing solutions using Copilot Studio and Azure AI Foundry</li>
+                            <li>Implementing AI Search capabilities and advanced automation workflows</li>
+                            <li>Contributing to Power Platform development and SharePoint modernization projects</li>
+                        </ul>
+                        <div class="technologies">
+                            <span class="tech-tag"><i class="fas fa-brain"></i> GenAI</span>
+                            <span class="tech-tag"><i class="fab fa-microsoft"></i> Azure AI</span>
+                            <span class="tech-tag"><i class="fas fa-robot"></i> Copilot Studio</span>
+                            <span class="tech-tag"><i class="fas fa-search"></i> AI Search</span>
+                            <span class="tech-tag"><i class="fas fa-hashtag"></i> C#</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-2.png"
-                alt="Project 2"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img
-                src="./assets/project-3.png"
-                alt="Project 3"
-                class="project-img"
-              />
-            </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
-            <div class="btn-container">
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Github
-              </button>
-              <button
-                class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/'"
-              >
-                Live Demo
-              </button>
-            </div>
-          </div>
         </div>
-      </div>
-      <img
-        src="./assets/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="location.href='./#contact'"
-      />
     </section>
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img
-            src="./assets/email.png"
-            alt="Email icon"
-            class="icon contact-icon email-icon"
-          />
-          <p><a href="mailto:examplemail@gmail.com">Example@gmail.com</a></p>
+
+    <!-- Awards Section with Clickable Links -->
+<section class="awards" id="awards">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Awards & Achievements</h2>
         </div>
-        <div class="contact-info-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn icon"
-            class="icon contact-icon"
-          />
-          <p><a href="https://www.linkedin.com">LinkedIn</a></p>
+        <div class="awards-grid">
+            <div class="award-card featured-award clickable-award" onclick="openAward('https://media.licdn.com/dms/image/v2/D5622AQH08QC3OPoBnQ/feedshare-shrink_800/B56ZZD2EmYGcAg-/0/1744894971009?e=1756339200&v=beta&t=gPtVP6esSsk2Oj9t-vRuWvv08JmX_BFDXke2cDfdSnY')">
+                <div class="award-icon">🏆</div>
+                <div class="award-info">
+                    <h3>EY Achiever Extraordinaire Award</h3>
+                    <p>Ernst & Young Global Achievement Recognition</p>
+                    <span class="award-date">2025</span>
+                </div>
+                <div class="click-indicator">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>Click to view certificate</span>
+                </div>
+            </div>
+            
+            <div class="award-card clickable-award" onclick="openAward('https://learn.microsoft.com/en-us/users/harshpandita-6273/credentials/be55675281175a05?ref=https%3A%2F%2Fwww.linkedin.com%2F')">
+                <div class="award-icon">🎓</div>
+                <div class="award-info">
+                    <h3>Microsoft AI-900 Certification</h3>
+                    <p>Azure AI Fundamentals</p>
+                    <span class="award-date">2024</span>
+                </div>
+                <div class="click-indicator">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View Microsoft Learn credential</span>
+                </div>
+            </div>
+
+            <div class="award-card clickable-award" onclick="openAward('https://learn.microsoft.com/en-us/users/harshpandita-6273/credentials/d995b2eff7dafc53?ref=https%3A%2F%2Fwww.linkedin.com%2F')">
+                <div class="award-icon">⚡</div>
+                <div class="award-info">
+                    <h3>Microsoft PL-900 Certification</h3>
+                    <p>Power Platform Fundamentals</p>
+                    <span class="award-date">2024</span>
+                </div>
+                <div class="click-indicator">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View Microsoft Learn credential</span>
+                </div>
+            </div>
+
+            <div class="award-card clickable-award" onclick="openAward('https://www.linkedin.com/in/harsh-pandita-dev/details/certifications/1722956250151/single-media-viewer/?profileId=ACoAAESQUcYB6KrZ23PD43c_78Trxu5EwCwekrY')">
+                <div class="award-icon">🚀</div>
+                <div class="award-info">
+                    <h3>Mendix Rapid Developer</h3>
+                    <p>Low-Code Application Development</p>
+                    <span class="award-date">2024</span>
+                </div>
+                <div class="click-indicator">
+                    <i class="fas fa-external-link-alt"></i>
+                    <span>View LinkedIn certificate</span>
+                </div>
+            </div>
         </div>
-      </div>
-    </section>
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        
+        <div class="stats-counter">
+            <div class="stat-item">
+                <span class="stat-number" data-target="3">0</span>
+                <span class="stat-label">Major Projects Completed</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="4">0</span>
+                <span class="stat-label">Professional Certifications</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="1">0</span>
+                <span class="stat-label">Years at EY</span>
+            </div>
         </div>
-      </nav>
-      <p>Copyright &#169; 2024 Harsh Pandita. All Rights Reserved.</p>
-    </footer>
+    </div>
+</section>
+
+
+  <!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Ready to collaborate on innovative AI and automation solutions? Reach out through any of these platforms.</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>Panditaharsh32@gmail.com</p>
+                    <a href="mailto:Panditaharsh32@gmail.com" class="contact-link">Send Email</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Phone</h3>
+                    <p>+91 9796469900</p>
+                    <a href="tel:+919796469900" class="contact-link">Call Now</a>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location</h3>
+                    <p>India</p>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Current Role</h3>
+                    <p>Software Engineer at EY</p>
+                </div>
+            </div>
+            
+            <!-- Social Media Links Section -->
+            <div class="social-media-section">
+                <h3>Connect with me on</h3>
+                <div class="social-platforms">
+                    <a href="https://www.linkedin.com/in/harsh-pandita-dev/" target="_blank" rel="noopener noreferrer" class="social-platform linkedin">
+                        <div class="platform-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="platform-info">
+                            <h4>LinkedIn</h4>
+                            <p>Professional networking and career updates</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/harshpandita2000" target="_blank" rel="noopener noreferrer" class="social-platform github">
+                        <div class="platform-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <div class="platform-info">
+                            <h4>GitHub</h4>
+                            <p>Code repositories and open source projects</p>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:Panditaharsh32@gmail.com" class="social-platform email">
+                        <div class="platform-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="platform-info">
+                            <h4>Email</h4>
+                            <p>Direct communication for business inquiries</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.instagram.com/harsh_.pandita/" target="_blank" rel="noopener noreferrer" class="social-platform instagram">
+                        <div class="platform-icon">
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                        <div class="platform-info">
+                            <h4>Instagram</h4>
+                            <p>Personal updates and tech insights</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-profile">
+                    <img src="images/hp.jpeg" alt="Harsh Pandita" class="footer-profile-img">
+                    <div class="footer-text">
+                        <h3>Harsh Pandita</h3>
+                        <p>Software Engineer specializing in AI and automation technologies.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/harsh-pandita-dev/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/harshpandita2000" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:Panditaharsh32@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Harsh Pandita. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
