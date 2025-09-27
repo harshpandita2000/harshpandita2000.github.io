@@ -1112,8 +1112,10 @@ section {
 .role-title {
     font-size: 1.2rem;
     font-weight: 600;
-    color: var(--text-color);
     margin-bottom: 0.5rem;
+    color: var(--accent-color) !important;
+    text-shadow: 0 0 10px rgba(64, 123, 255, 0.3);
+    display: inline-block;
 }
 
 .role-duration {
@@ -1197,6 +1199,11 @@ section {
 
 [data-theme="light"] .company-full-name {
     color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] .role-title {
+    color: var(--accent-color) !important;
+    text-shadow: 0 0 6px rgba(64, 123, 255, 0.2);
 }
 
 [data-theme="light"] .company-header {
@@ -1372,10 +1379,8 @@ section {
     
     .role-title {
         font-size: 1.1rem;
-        background: linear-gradient(135deg, var(--accent-color), #8B5CF6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: var(--accent-color) !important;
+        text-shadow: 0 0 8px rgba(64, 123, 255, 0.4);
     }
     
     .skill-tag {
@@ -3034,6 +3039,7 @@ section {
         transform: none;
     }
 }
+
 
 
 /* EMERGENCY SPACING FIX */
