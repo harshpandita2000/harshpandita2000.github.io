@@ -1263,20 +1263,70 @@ section {
         gap: 1rem;
     }
     
+    /* Enhanced Mobile Experience Card */
+    .company-experience-card {
+        padding: 2rem 1.5rem;
+        border-radius: 16px;
+        /* Maintain gradient and animations on mobile */
+        background: linear-gradient(135deg, rgba(64, 123, 255, 0.1), rgba(139, 92, 246, 0.06)) !important;
+        backdrop-filter: blur(15px);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(64, 123, 255, 0.1);
+    }
+    
+    /* Ensure company name gradient works on mobile */
+    .company-name {
+        font-size: 1.6rem;
+        background: linear-gradient(135deg, var(--accent-color), #8B5CF6) !important;
+        -webkit-background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+        background-clip: text !important;
+    }
+    
+    .company-experience-card:hover {
+        transform: translateY(-3px) scale(1.01);
+        background: linear-gradient(135deg, rgba(64, 123, 255, 0.15), rgba(139, 92, 246, 0.08)) !important;
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(64, 123, 255, 0.15);
+    }
+    
+    /* Enhanced Timeline for Mobile */
     .timeline-container {
         padding-left: 1.5rem;
     }
     
     .timeline-container::before {
         left: 10px;
+        background: linear-gradient(180deg, rgba(64, 123, 255, 0.6), rgba(139, 92, 246, 0.4));
+        width: 3px;
     }
     
     .timeline-dot {
-        left: -26px;
+        left: -27px;
+        width: 16px;
+        height: 16px;
+    }
+    
+    .timeline-dot.current {
+        background: var(--accent-color);
+        box-shadow: 0 0 0 4px rgba(64, 123, 255, 0.3);
+        animation: pulse-dot 2s infinite;
     }
     
     .timeline-content {
         padding: 1.25rem;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(64, 123, 255, 0.05)) !important;
+        border: 1px solid rgba(64, 123, 255, 0.2);
+        border-radius: 12px;
+    }
+    
+    .timeline-content:hover {
+        transform: translateY(-2px) translateX(3px);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(64, 123, 255, 0.08)) !important;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15), 0 4px 12px rgba(64, 123, 255, 0.1);
+    }
+    
+    .timeline-item:first-child .timeline-content {
+        background: linear-gradient(135deg, rgba(64, 123, 255, 0.15), rgba(139, 92, 246, 0.08)) !important;
+        border: 1px solid rgba(64, 123, 255, 0.3);
     }
     
     .role-skills {
@@ -1285,7 +1335,16 @@ section {
     
     .skill-tag {
         font-size: 0.75rem;
-        padding: 0.25rem 0.6rem;
+        padding: 0.3rem 0.7rem;
+        background: linear-gradient(135deg, rgba(64, 123, 255, 0.18), rgba(139, 92, 246, 0.12)) !important;
+        border: 1px solid rgba(64, 123, 255, 0.3);
+        border-radius: 16px;
+    }
+    
+    .skill-tag:hover {
+        background: linear-gradient(135deg, rgba(64, 123, 255, 0.25), rgba(139, 92, 246, 0.18)) !important;
+        transform: translateY(-1px) scale(1.03);
+        box-shadow: 0 4px 12px rgba(64, 123, 255, 0.25);
     }
 }
 
@@ -1294,12 +1353,35 @@ section {
         padding: 1.25rem;
     }
     
+    .company-experience-card {
+        padding: 1.5rem 1rem;
+        /* Maintain vibrant effects on small screens */
+        background: linear-gradient(135deg, rgba(64, 123, 255, 0.12), rgba(139, 92, 246, 0.08)) !important;
+    }
+    
     .timeline-content {
         padding: 1rem;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(64, 123, 255, 0.06)) !important;
+        border: 1px solid rgba(64, 123, 255, 0.25);
+    }
+    
+    .timeline-content:hover {
+        transform: translateY(-2px);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(64, 123, 255, 0.1)) !important;
     }
     
     .role-title {
         font-size: 1.1rem;
+        background: linear-gradient(135deg, var(--accent-color), #8B5CF6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .skill-tag {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.6rem;
+        background: linear-gradient(135deg, rgba(64, 123, 255, 0.2), rgba(139, 92, 246, 0.15)) !important;
     }
 }
 
@@ -2952,6 +3034,7 @@ section {
         transform: none;
     }
 }
+
 
 /* EMERGENCY SPACING FIX */
 .nav > * {
