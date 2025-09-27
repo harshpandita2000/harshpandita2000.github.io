@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initThemeToggle(); // This is the main issue - theme toggle needs to be initialized first
     initProjectFilters();
     initStatCounters();
+    initCareerProgress();
+    initDynamicDuration();
     initSmoothScrolling();
     initAwardClicks();
     
@@ -474,4 +476,149 @@ function initKeyboardNavigation() {
             }
         }
     });
+}
+
+// Simple Timeline Animation
+function initCareerProgress() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    if (!timelineItems.length) return;
+    
+    const observerOptions = {
+        threshold: 0.3,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Initialize items as hidden
+    timelineItems.forEach((item, index) => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = `all 0.6s ease ${index * 0.1}s`;
+        observer.observe(item);
+    });
+}
+
+// Dynamic Duration Calculator
+function initDynamicDuration() {
+    updateDurations();
+    
+    // Update every minute to keep duration current
+    setInterval(updateDurations, 60000);
+    
+    // Also update when page becomes visible (user switches back to tab)
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            updateDurations();
+        }
+    });
+}
+
+function updateDurations() {
+    const currentDate = new Date();
+    const durationElements = document.querySelectorAll('[data-start-date]');
+    
+    durationElements.forEach(element => {
+        const startDateStr = element.getAttribute('data-start-date');
+        const endDateStr = element.getAttribute('data-end-date');
+        const roleType = element.getAttribute('data-role');
+        
+        if (startDateStr) {
+            const startDate = new Date(startDateStr);
+            let endDate = currentDate;
+            let duration = '';
+            
+            // Handle different role types
+            if (roleType === 'current') {
+                // Current role: calculate from start date to now
+                duration = calculateDuration(startDate, currentDate);
+                
+                // Update the dynamic duration span
+                const dynamicSpan = element.querySelector('.dynamic-duration');
+                if (dynamicSpan) {
+                    dynamicSpan.textContent = duration;
+                }
+                
+                // Update the full text
+                const monthYear = formatMonthYear(startDate);
+                element.childNodes[0].textContent = `${monthYear} – Present (`;
+                
+            } else if (roleType === 'previous' && endDateStr) {
+                // Previous role: calculate from start date to end date
+                endDate = new Date(endDateStr);
+                duration = calculateDuration(startDate, endDate);
+                
+                // Update the dynamic duration span
+                const dynamicSpan = element.querySelector('.dynamic-duration');
+                if (dynamicSpan) {
+                    dynamicSpan.textContent = duration;
+                }
+                
+            } else if (element.classList.contains('total-tenure')) {
+                // Total tenure at company: from first start date to now
+                duration = calculateDuration(startDate, currentDate);
+                
+                // Update the total duration span
+                const totalSpan = element.querySelector('.dynamic-total-duration');
+                if (totalSpan) {
+                    totalSpan.textContent = duration;
+                }
+            }
+        }
+    });
+}
+
+function calculateDuration(startDate, endDate) {
+    const startYear = startDate.getFullYear();
+    const startMonth = startDate.getMonth();
+    const endYear = endDate.getFullYear();
+    const endMonth = endDate.getMonth();
+    
+    let years = endYear - startYear;
+    let months = endMonth - startMonth;
+    
+    if (months < 0) {
+        years--;
+        months += 12;
+    }
+    
+    // If it's the same month and year, check days
+    if (years === 0 && months === 0) {
+        const days = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+        if (days < 30) {
+            return days === 1 ? '1 day' : `${days} days`;
+        } else {
+            months = 1; // Round up to 1 month if more than 30 days
+        }
+    }
+    
+    let result = '';
+    
+    if (years > 0) {
+        result += years === 1 ? '1 yr' : `${years} yrs`;
+        if (months > 0) {
+            result += ' ';
+        }
+    }
+    
+    if (months > 0) {
+        result += months === 1 ? '1 mo' : `${months} mos`;
+    }
+    
+    return result || '1 mo'; // Fallback
+}
+
+function formatMonthYear(date) {
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                   'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    return `${months[date.getMonth()]} ${date.getFullYear()}`;
 }
