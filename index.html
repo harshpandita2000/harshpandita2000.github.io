@@ -399,31 +399,62 @@
     <section class="experience" id="experience">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Work Experience</h2>
+                <h2 class="section-title">Experience</h2>
             </div>
-            <div class="experience-timeline">
-                <div class="experience-card">
-                    <div class="company-logo">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTezmWC96MgZ-vf_mbU3xyQDQhEsl_O2G9qUA&s" alt="EY Logo" class="logo-img">
-                    </div>
-                    <div class="experience-info">
-                        <h3>Software Engineer</h3>
-                        <h4>Ernst & Young (EY)</h4>
-                        <p class="duration">May 2024 - Present</p>
-                        <ul class="responsibilities">
-                            <li>Currently working on cutting-edge GenAI technologies and Azure AI solutions</li>
-                            <li>Developing solutions using Copilot Studio and Azure AI Foundry</li>
-                            <li>Implementing AI Search capabilities and advanced automation workflows</li>
-                            <li>Contributing to Power Platform development and SharePoint modernization projects</li>
-                        </ul>
-                        <div class="technologies">
-                            <span class="tech-tag"><i class="fas fa-brain"></i> GenAI</span>
-                            <span class="tech-tag"><i class="fab fa-microsoft"></i> Azure AI</span>
-                            <span class="tech-tag"><i class="fas fa-robot"></i> Copilot Studio</span>
-                            <span class="tech-tag"><i class="fas fa-search"></i> AI Search</span>
-                            <span class="tech-tag"><i class="fas fa-hashtag"></i> C#</span>
+            
+            <!-- EY Company Experience Card -->
+            <div class="company-experience-card">
+                <!-- Company Header -->
+                <div class="company-header">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTezmWC96MgZ-vf_mbU3xyQDQhEsl_O2G9qUA&s" alt="EY Logo" class="company-logo">
+                    <div class="company-details">
+                        <h3 class="company-name">EY</h3>
+                        <div class="company-full-name">Ernst & Young</div>
+                        <div class="total-tenure" data-start-date="2024-05-20">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="tenure-text">Total: <span class="dynamic-total-duration"></span></span>
+                        </div>
+                        <div class="employment-meta">
+                            <span><i class="fas fa-briefcase"></i> Full-time</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Hyderabad, Telangana, India · Hybrid</span>
                         </div>
                     </div>
+                </div>
+
+                <!-- Vertical Timeline -->
+            <div class="timeline-container">
+                <!-- Current Role -->
+                <div class="timeline-item">
+                    <div class="timeline-dot current"></div>
+                    <div class="timeline-content">
+                        <h4 class="role-title">Software Engineer</h4>
+                        <p class="role-duration" data-start-date="2025-09-01" data-role="current">Sep 2025 – Present (<span class="dynamic-duration"></span>)</p>
+                        <div class="role-skills">
+                            <span class="skill-tag">GEN AI</span>
+                            <span class="skill-tag">Microsoft Copilot Studio</span>
+                            <span class="skill-tag">Azure Functions</span>
+                            <span class="skill-tag">Azure AI Foundry</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Previous Role -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h4 class="role-title">Associate Software Engineer</h4>
+                        <p class="role-duration" data-start-date="2024-05-20" data-end-date="2025-09-01" data-role="previous">May 2024 – Sep 2025 (<span class="dynamic-duration"></span>)</p>
+                        <div class="role-description">
+                            <p>Developed a C# migration utility that converts SharePoint Designer XOML workflows to Power Automate JSON format. Enhanced with custom features for better efficiency and UX.</p>
+                        </div>
+                        <div class="role-skills">
+                            <span class="skill-tag">Technology Consulting</span>
+                            <span class="skill-tag">.NET Framework</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">Power BI</span>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>
@@ -436,7 +467,7 @@
             <h2 class="section-title">Awards & Achievements</h2>
         </div>
         <div class="awards-grid">
-            <div class="award-card featured-award clickable-award" onclick="openAward('https://media.licdn.com/dms/image/v2/D5622AQH08QC3OPoBnQ/feedshare-shrink_800/B56ZZD2EmYGcAg-/0/1744894971009?e=1756339200&v=beta&t=gPtVP6esSsk2Oj9t-vRuWvv08JmX_BFDXke2cDfdSnY')">
+            <div class="award-card featured-award clickable-award" onclick="openAward('https://media.licdn.com/dms/image/v2/D5622AQH08QC3OPoBnQ/feedshare-shrink_1280/B56ZZD2EmYGcAk-/0/1744894971014?e=1761782400&v=beta&t=49RLPln6fHLPGN9dS6Yl78C0RcYeO12STA6-gY6Lmg4')">
                 <div class="award-icon">🏆</div>
                 <div class="award-info">
                     <h3>EY Achiever Extraordinaire Award</h3>
@@ -507,51 +538,9 @@
 </section>
 
 
-  <!-- Contact Section -->
-<section class="contact" id="contact">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Contact</h2>
-            <p class="section-subtitle">Ready to collaborate on innovative AI and automation solutions? Reach out through any of these platforms.</p>
-        </div>
-        <div class="contact-content">
-            <div class="contact-info-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email</h3>
-                    <p>Panditaharsh32@gmail.com</p>
-                    <a href="mailto:Panditaharsh32@gmail.com" class="contact-link">Send Email</a>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>Phone</h3>
-                    <p>+91 9796469900</p>
-                    <a href="tel:+919796469900" class="contact-link">Call Now</a>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3>Location</h3>
-                    <p>India</p>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>Current Role</h3>
-                    <p>Software Engineer at EY</p>
-                </div>
-            </div>
-            
-            <!-- Social Media Links Section -->
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
             <div class="social-media-section">
                 <h3>Connect with me on</h3>
                 <div class="social-platforms">
