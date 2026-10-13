@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#F0F0E9"/>
+  <rect x="18" y="18" width="604" height="324" rx="16" fill="#FFFFFF"/>
+  <path d="M34 18h572a16 16 0 0 1 16 16v34H18V34a16 16 0 0 1 16-16Z" fill="#263A36"/>
+  <path d="M40 35h18v17H40z" rx="3" fill="#E4B34F"/>
+  <path d="M44 48v-5l5-5 5 5v5" stroke="#263A36" stroke-width="1.5" stroke-linejoin="round"/>
+  <text x="68" y="48" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="14" font-weight="700">RISK HORIZON</text>
+  <text x="493" y="47" fill="#D7D8C9" font-family="Arial,sans-serif" font-size="10">10-K ANALYSIS</text>
+  <text x="42" y="98" fill="#243B35" font-family="Arial,sans-serif" font-size="18" font-weight="700">Risk factors by company</text>
+  <text x="42" y="117" fill="#7C8982" font-family="Arial,sans-serif" font-size="10">SEC filing insights · Item 1A</text>
+  <rect x="42" y="132" width="267" height="177" rx="10" fill="#FBFCFA" stroke="#E3E7E0"/>
+  <text x="59" y="155" fill="#45564E" font-family="Arial,sans-serif" font-size="11" font-weight="700">RISK CATEGORY MIX</text>
+  <circle cx="131" cy="226" r="46" stroke="#E8ECE6" stroke-width="16"/>
+  <path d="M131 180a46 46 0 0 1 44 32" stroke="#C78A43" stroke-width="16" stroke-linecap="round"/>
+  <path d="M175 212a46 46 0 0 1-20 49" stroke="#62896C" stroke-width="16" stroke-linecap="round"/>
+  <path d="M155 261a46 46 0 0 1-68-35" stroke="#738DA0" stroke-width="16" stroke-linecap="round"/>
+  <text x="202" y="201" fill="#53635A" font-family="Arial,sans-serif" font-size="9">Operational</text><circle cx="193" cy="198" r="4" fill="#C78A43"/>
+  <text x="202" y="224" fill="#53635A" font-family="Arial,sans-serif" font-size="9">Regulatory</text><circle cx="193" cy="221" r="4" fill="#62896C"/>
+  <text x="202" y="247" fill="#53635A" font-family="Arial,sans-serif" font-size="9">Financial</text><circle cx="193" cy="244" r="4" fill="#738DA0"/>
+  <rect x="326" y="132" width="272" height="177" rx="10" fill="#FBFCFA" stroke="#E3E7E0"/>
+  <text x="344" y="155" fill="#45564E" font-family="Arial,sans-serif" font-size="11" font-weight="700">EXTRACTED FROM 10-K</text>
+  <text x="344" y="181" fill="#7C8982" font-family="Arial,sans-serif" font-size="9">COMPANY</text>
+  <text x="481" y="181" fill="#7C8982" font-family="Arial,sans-serif" font-size="9">ITEM 1A</text>
+  <path d="M344 190h235M344 228h235M344 267h235" stroke="#E8ECE6"/>
+  <text x="344" y="212" fill="#34463F" font-family="Arial,sans-serif" font-size="10" font-weight="700">Northstar Energy</text>
+  <rect x="481" y="198" width="79" height="19" rx="9" fill="#F7EBCF"/><text x="496" y="211" fill="#8B671F" font-family="Arial,sans-serif" font-size="8" font-weight="700">18 FACTORS</text>
+  <text x="344" y="251" fill="#34463F" font-family="Arial,sans-serif" font-size="10" font-weight="700">Atlas Systems</text>
+  <rect x="481" y="237" width="79" height="19" rx="9" fill="#E4EEE5"/><text x="496" y="250" fill="#4E7557" font-family="Arial,sans-serif" font-size="8" font-weight="700">12 FACTORS</text>
+  <text x="344" y="290" fill="#34463F" font-family="Arial,sans-serif" font-size="10" font-weight="700">Meridian Group</text>
+  <rect x="481" y="276" width="79" height="19" rx="9" fill="#E2EAF0"/><text x="496" y="289" fill="#536F82" font-family="Arial,sans-serif" font-size="8" font-weight="700">9 FACTORS</text>
+</svg>

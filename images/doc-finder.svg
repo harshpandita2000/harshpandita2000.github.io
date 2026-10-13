@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#EAF0EA"/>
+  <rect x="18" y="18" width="604" height="324" rx="16" fill="#FFFFFF"/>
+  <path d="M34 18h572a16 16 0 0 1 16 16v34H18V34a16 16 0 0 1 16-16Z" fill="#24453D"/>
+  <circle cx="48" cy="43" r="11" fill="#C4E1CF"/>
+  <path d="M48 37c-4 0-7 3-7 7 0 5 7 11 7 11s7-6 7-11c0-4-3-7-7-7Z" fill="#388064"/>
+  <circle cx="48" cy="44" r="2" fill="#FFFFFF"/>
+  <text x="68" y="48" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="15" font-weight="700">DOC FINDER</text>
+  <text x="504" y="47" fill="#C6DDD0" font-family="Arial,sans-serif" font-size="10">NEARBY CARE</text>
+  <text x="42" y="98" fill="#28463D" font-family="Arial,sans-serif" font-size="18" font-weight="700">Find care near you</text>
+  <text x="42" y="117" fill="#82918A" font-family="Arial,sans-serif" font-size="10">AI-assisted recommendations by location</text>
+  <rect x="42" y="132" width="220" height="176" rx="10" fill="#F8FAF7" stroke="#E2E9E2"/>
+  <path d="M57 161c28-23 43 16 70-5s43 20 67-2 40 6 53-7M54 193c24 17 43-19 68 3s43-11 63 11 37-4 62 12M61 254c22-16 43 7 65-8s42 17 62 2 41 15 58-3M114 138c-13 26 15 34 1 57s10 30-3 52 5 34-1 55M185 137c16 20-7 36 8 55s-10 32 5 49-4 43 8 61" stroke="#D6E2D8" stroke-width="2"/>
+  <circle cx="123" cy="203" r="15" fill="#D9EBDD"/><path d="M123 193c-5 0-9 4-9 9 0 7 9 15 9 15s9-8 9-15c0-5-4-9-9-9Z" fill="#428364"/><circle cx="123" cy="202" r="2.5" fill="#FFFFFF"/>
+  <circle cx="211" cy="247" r="13" fill="#F3E8CB"/><path d="M211 238c-4 0-7 3-7 7 0 6 7 12 7 12s7-6 7-12c0-4-3-7-7-7Z" fill="#B58A3D"/><circle cx="211" cy="245" r="2" fill="#FFFFFF"/>
+  <rect x="274" y="132" width="324" height="176" rx="10" fill="#FFFFFF" stroke="#E2E9E2"/>
+  <text x="292" y="155" fill="#28463D" font-family="Arial,sans-serif" font-size="11" font-weight="700">RECOMMENDED NEARBY</text>
+  <rect x="290" y="168" width="292" height="57" rx="8" fill="#F7FAF7"/>
+  <circle cx="317" cy="196" r="16" fill="#DCECE0"/><path d="M310 196h14M317 189v14" stroke="#468566" stroke-width="2" stroke-linecap="round"/>
+  <text x="344" y="190" fill="#31483D" font-family="Arial,sans-serif" font-size="10" font-weight="700">Community Health Center</text>
+  <text x="344" y="207" fill="#7F8E85" font-family="Arial,sans-serif" font-size="9">Primary care · 1.2 km</text>
+  <rect x="290" y="237" width="292" height="57" rx="8" fill="#F7FAF7"/>
+  <circle cx="317" cy="265" r="16" fill="#F3EBD8"/><path d="M310 265h14M317 258v14" stroke="#A37B32" stroke-width="2" stroke-linecap="round"/>
+  <text x="344" y="259" fill="#31483D" font-family="Arial,sans-serif" font-size="10" font-weight="700">Northside Family Clinic</text>
+  <text x="344" y="276" fill="#7F8E85" font-family="Arial,sans-serif" font-size="9">Family medicine · 2.4 km</text>
+</svg>

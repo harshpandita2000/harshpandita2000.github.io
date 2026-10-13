@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" fill="none">
+  <rect width="640" height="360" fill="#E9EFF2"/>
+  <rect x="18" y="18" width="604" height="324" rx="16" fill="#FFFFFF"/>
+  <path d="M34 18h572a16 16 0 0 1 16 16v34H18V34a16 16 0 0 1 16-16Z" fill="#183746"/>
+  <path d="M42 34h14v18H42z" rx="3" fill="#77C7C0"/>
+  <path d="M46 39h6M46 43h6M46 47h4" stroke="#183746" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="66" y="48" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="15" font-weight="700">CONTRACTIQ</text>
+  <text x="500" y="47" fill="#B7D0D5" font-family="Arial,sans-serif" font-size="10">SHAREPOINT LIBRARY</text>
+  <rect x="18" y="68" width="139" height="274" fill="#F3F6F7"/>
+  <text x="34" y="94" fill="#45616B" font-family="Arial,sans-serif" font-size="10" font-weight="700">YOUR DOCUMENTS</text>
+  <rect x="30" y="108" width="115" height="42" rx="7" fill="#E2F0EF"/>
+  <path d="M42 119h12v17H42z" fill="#4C9F98"/><path d="M45 124h6M45 128h6M45 132h4" stroke="#FFFFFF" stroke-width="1"/>
+  <text x="61" y="126" fill="#2C4B51" font-family="Arial,sans-serif" font-size="9" font-weight="700">Master terms</text>
+  <text x="61" y="139" fill="#7B9297" font-family="Arial,sans-serif" font-size="8">Updated today</text>
+  <path d="M42 169h12v17H42z" fill="#C9D5D8"/><text x="61" y="176" fill="#667D84" font-family="Arial,sans-serif" font-size="9">Supplier MSA</text>
+  <text x="61" y="189" fill="#9AA9AD" font-family="Arial,sans-serif" font-size="8">18 pages</text>
+  <path d="M42 209h12v17H42z" fill="#C9D5D8"/><text x="61" y="216" fill="#667D84" font-family="Arial,sans-serif" font-size="9">Data processing</text>
+  <text x="61" y="229" fill="#9AA9AD" font-family="Arial,sans-serif" font-size="8">12 pages</text>
+  <text x="178" y="96" fill="#1E3D49" font-family="Arial,sans-serif" font-size="17" font-weight="700">Ask your contract library</text>
+  <rect x="178" y="108" width="424" height="39" rx="9" fill="#FFFFFF" stroke="#D6E1E3"/>
+  <circle cx="196" cy="127" r="6" stroke="#518E91" stroke-width="2"/><path d="m201 132 5 5" stroke="#518E91" stroke-width="2" stroke-linecap="round"/>
+  <text x="216" y="131" fill="#83969B" font-family="Arial,sans-serif" font-size="10">What is the renewal notice period?</text>
+  <rect x="178" y="160" width="424" height="154" rx="10" fill="#F8FAFA" stroke="#E1E9EA"/>
+  <circle cx="198" cy="183" r="10" fill="#D9EFEB"/>
+  <path d="M194 183h8M198 179v8" stroke="#388C83" stroke-width="1.5" stroke-linecap="round"/>
+  <text x="216" y="187" fill="#31535B" font-family="Arial,sans-serif" font-size="10" font-weight="700">CONTRACTIQ ANSWER</text>
+  <text x="196" y="215" fill="#30474D" font-family="Arial,sans-serif" font-size="11">The agreement requires 60 days written notice</text>
+  <text x="196" y="232" fill="#30474D" font-family="Arial,sans-serif" font-size="11">before the current term ends.</text>
+  <rect x="196" y="247" width="245" height="28" rx="6" fill="#E5F1EF"/>
+  <text x="207" y="265" fill="#3B7774" font-family="Arial,sans-serif" font-size="9" font-weight="700">SOURCE: MASTER SERVICES AGREEMENT</text>
+  <rect x="450" y="247" width="92" height="28" rx="14" fill="#D8ECE8"/>
+  <text x="469" y="265" fill="#32796E" font-family="Arial,sans-serif" font-size="9" font-weight="700">CITED ANSWER</text>
+</svg>
