@@ -10,6 +10,7 @@ const statNumbers = document.querySelectorAll('.stat-number');
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
+    updateCopyrightYear();
     initScrollAnimations();
     initProgressBar();
     initThemeToggle(); // This is the main issue - theme toggle needs to be initialized first
@@ -25,6 +26,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initTouchGestures();
     initKeyboardNavigation();
 });
+
+function updateCopyrightYear() {
+    const yearElement = document.getElementById('currentYear');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+}
 
 function initStatCounters() {
     const statNumbers = document.querySelectorAll('.stat-number');
@@ -84,7 +92,9 @@ function animateCounter(element) {
         current++;
         
         if (current >= target) {
-            if (target === 3) {
+            if (element.hasAttribute('data-suffix')) {
+                element.textContent = `${target}${element.getAttribute('data-suffix')}`;
+            } else if (target === 3) {
                 element.textContent = '3+';
             } else if (target === 4) {
                 element.textContent = '4';
@@ -141,32 +151,45 @@ function initScrollAnimations() {
     });
 }
 
-// Progress Bar with throttling for better performance
+// Progress Bar + Hide/Show Navbar on Scroll
 function initProgressBar() {
     let ticking = false;
+    let lastScrollY = 0;
     
     function updateProgressBar() {
         const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
         progressBar.style.width = `${Math.min(scrolled, 100)}%`;
         
         const currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
+        const currentScrollY = window.scrollY;
         
-        if (window.scrollY > 100) {
+        // Solid background when scrolled
+        if (currentScrollY > 50) {
             if (currentTheme === 'light') {
                 header.style.background = 'rgba(255, 255, 255, 0.98)';
             } else {
-                header.style.background = 'rgba(0, 0, 0, 0.95)';
+                header.style.background = 'rgba(0, 0, 0, 0.98)';
             }
             header.classList.add('scrolled');
         } else {
             if (currentTheme === 'light') {
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
             } else {
-                header.style.background = 'rgba(0, 0, 0, 0.8)';
+                header.style.background = 'rgba(0, 0, 0, 0.9)';
             }
             header.classList.remove('scrolled');
         }
         
+        // Hide navbar when scrolling down, show when scrolling up
+        if (currentScrollY > lastScrollY && currentScrollY > 100) {
+            // Scrolling down
+            header.style.transform = 'translateY(-100%)';
+        } else {
+            // Scrolling up or at top
+            header.style.transform = 'translateY(0)';
+        }
+        
+        lastScrollY = currentScrollY;
         ticking = false;
     }
     
@@ -365,10 +388,10 @@ function initEnhancedMobileMenu() {
                 <i class="fab fa-github"></i>
             </a>
             <a href="https://leetcode.com/harshpandita/" target="_blank" aria-label="LeetCode" title="LeetCode Profile" class="mobile-leetcode">
-                <img src="https://github.com/rahuldkjain/github-profile-readme-generator/raw/master/src/images/icons/Social/leet-code.svg" alt="LeetCode" class="mobile-platform-icon">
+                <img src="https://cdn.simpleicons.org/leetcode/FFA116" alt="LeetCode" class="mobile-platform-icon">
             </a>
             <a href="https://auth.geeksforgeeks.org/user/harshpandita/?utm_source=geeksforgeeks&utm_medium=my_profile&utm_campaign=auth_user" target="_blank" aria-label="GeeksforGeeks" title="GeeksforGeeks Profile" class="mobile-gfg">
-                <img src="https://github.com/rahuldkjain/github-profile-readme-generator/raw/master/src/images/icons/Social/geeks-for-geeks.svg" alt="GeeksforGeeks" class="mobile-platform-icon">
+                <img src="https://cdn.simpleicons.org/geeksforgeeks/2F8D46" alt="GeeksforGeeks" class="mobile-platform-icon">
             </a>
             <a href="mailto:Panditaharsh32@gmail.com" aria-label="Email" title="Send Email">
                 <i class="fas fa-envelope"></i>
@@ -566,15 +589,35 @@ function updateDurations() {
             } else if (element.classList.contains('total-tenure')) {
                 // Total tenure at company: from first start date to now
                 duration = calculateDuration(startDate, currentDate);
+                const completedYears = calculateCompletedYears(startDate, currentDate);
                 
                 // Update the total duration span
                 const totalSpan = element.querySelector('.dynamic-total-duration');
                 if (totalSpan) {
                     totalSpan.textContent = duration;
                 }
+
+                document.querySelectorAll('.ey-tenure-years').forEach(yearElement => {
+                    yearElement.textContent = `${completedYears}+`;
+                    if (yearElement.classList.contains('stat-number')) {
+                        yearElement.setAttribute('data-target', completedYears);
+                    }
+                });
             }
         }
     });
+}
+
+function calculateCompletedYears(startDate, endDate) {
+    let years = endDate.getFullYear() - startDate.getFullYear();
+    const anniversaryHasPassed = endDate.getMonth() > startDate.getMonth() ||
+        (endDate.getMonth() === startDate.getMonth() && endDate.getDate() >= startDate.getDate());
+
+    if (!anniversaryHasPassed) {
+        years--;
+    }
+
+    return Math.max(years, 0);
 }
 
 function calculateDuration(startDate, endDate) {
